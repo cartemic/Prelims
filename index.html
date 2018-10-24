@@ -2,13 +2,12 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,
-        maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>BeaverDet</title>
+		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black_nicer.css">
+		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -18,348 +17,64 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ?
-            'css/print/pdf.css' : 'css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-
-				<section>
-                    <center>
-                        <h1>BeaverDet</h1>
-                        <h3>Tools for Detonation Research</h3>
-                        <h6>Mick Carter</h6>
-                    </center>
-                    <aside class="notes">
-                        Complete re-write of the software I built to design my tube, with a number of improvements
-                    </aside>
+				<section data-markdown class="center">
+                    ---
+                    # Preliminary Proposal
+                    ---
+                    **Mick Carter**  
+                    09 November 2018
                 </section>
-
-				<section>
-                    <section>
-                        <h1>Motivation</h1>
-                        <img w idth="75%" src="images/Radulescu_detonation.png">
-                        <font size="1"><br>Adapted from Radulescu, M. I., Sharpe, G. J., Law, C. K., & Lee, J. H. S. (2007). The hydrodynamic structure of unstable cellular detonations. Journal of Mechanics (Vol. 580). <a href="https://doi.org/10.1017/S0022112007005046">https://doi.org/10.1017/S0022112007005046</a>
-                        </font>
-                        <aside class="notes">
-                            <ul>
-                                <li> OVERALL GOAL: enable more efficient combustion through the use of detonation engines
-                                <li> Will be measuring detonation wave properties using schlieren photography
-                                <li> Determining the effect of combustion species on wave structure
-                            </ul>
-                        </aside>
-                    </section>
-                    <section>
-                        <h1>Motivation</h1>
-                        <img src="images/Tube.png">
-                        <aside class="notes">
-                            <ul>
-                                <li> This is roughly what the tube will look like
-                                <li> Designing a detonation tube like this takes a considerable amount of time
-                                <li> Lots of parameters to consider, which are dependent on how the gas mixture in the tube detonates
-                            </ul>
-                        </aside>
-                    </section>
-                    <section>
-                        <h1>Motivation</h1>
-                        <img src="images/DDT.png">
-                        <aside class="notes">
-                            <ul>
-                                <li> First, a subsonic flame (deflagration) must be convinced to become a detonation
-                                <li> Transition to detonation is enhanced by using periodic blockages
-                                <li> Blockage ratio and run-up distance (discuss later) are important parameters
-                            </ul>
-                        </aside>
-                    </section>
-                    <section>
-                        <h1>Motivation</h1>
-                        <img src="images/Viewing.png">
-                        <aside class="notes">
-                            <ul>
-                                <li> For schlieren imaging, a viewing section is needed
-                                <li> Windows must be able to withstand the pressure fluctuations in a detonation wave
-                                <li> Hardware failure, if it occurs, must be predictable and safe, minimizing damage to the tube
-                            </ul>
-                        </aside>
-                    </section>
-                    <section>
-                        <h1>Motivation</h1>
-                        <img src="images/Reflection.png">
-                        <aside class="notes">
-                            <ul>
-                                <li> Must account for tube's response to transient presure wave
-                                <li> (based on material properties and physical dimensions)
-                                <li> Reflected shocks further increase the pressure by a factor of ~2.5
-                            </ul>
-                        </aside>
-                    </section>
+                
+				<section data-markdown>
+                    # Introduction
+                    ---
                 </section>
-
-                <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Features
-                        ![](images/pandas.png)<!-- .element: class="fragment" data-fragment-index="1" height="150px" -->
-                        ![](images/pint.png)<!-- .element: class="fragment" data-fragment-index="2" height="150px" -->
-                        ![](images/guesswork.png)<!-- .element: class="fragment" data-fragment-index="3" height="150px" -->
-                        ![](images/sd2.png)<!-- .element: class="fragment" data-fragment-index="4" height="150px" -->
-
-                        ![](images/Numpy.png)<!-- .element: class="fragment" data-fragment-index="5" height="150px" -->
-                        ![](images/Sympy.png)<!-- .element: class="fragment" data-fragment-index="6" height="150px" -->
-                        ![](images/cantera.png)<!-- .element: class="fragment" data-fragment-index="7" width="400px" -->
-
-                        Note:
-                        - Talk about the features of this package
-                        - Material and hardware properties are imported from CSVs into Pandas dataframes for flexibility and ease of use
-                         - Old software had values hard-coded
-                         - New software has more materials to choose from
-                         - Users can add more materials using CSV files
-                        - Pint is used to protect users from unit problems
-                          - Old software relied on the user to be smart with units
-                        - Guess less: mixture specific calculations
-                          - Old software used more assumptions for thermodynamic states (detonation, reflection)
-                          - New software uses SD2 and Cantera to calculate gas states using the assumption of Equilibrium
-                        - SD2 is a rewritten, conda-deployable version of the Shock and Detonation toolbox
-                          - Original software from Caltech
-                          - Code was hard to read and highly non-PEP 8 compliant
-                          - IMPORTANT: not deployable on pip/conda, relies on user for all dependencies
-                          - Rewrote ~ 3/4 of the package so far, but it's still in work
-                        - Other dependencies:
-                          - Numpy because it's awesome
-                          - Sympy to solve window problems with one equation
-                          - Cantera to manage gas mixtures and calculate properties
-                    </script>
+                
+				<section data-markdown>
+                    # Motivation
+                    ---
                 </section>
-
-                <section>
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Using BeaverDet
-                            1. Set tube parameters<!-- .element: class="fragment" data-fragment-index="1" -->
-                            2. Calculate blockage ratio (BR) and diameter<!-- .element: class="fragment" data-fragment-index="2" -->
-                            3. Calculate max safe initial pressure<!-- .element: class="fragment" data-fragment-index="3" -->
-                            4. Calculate run-up distance<!-- .element: class="fragment" data-fragment-index="4" -->
-                            5. Calculate Chapman-Jouguet (CJ) and reflected shock states<!-- .element: class="fragment" data-fragment-index="5" -->
-                            6. Size flanges based on max pressure<!-- .element: class="fragment" data-fragment-index="6" -->
-                            7. Calculate window thickness and safety factor<!-- .element: class="fragment" data-fragment-index="7" -->
-                            8. Calculate bolt and plate safety factors<!-- .element: class="fragment" data-fragment-index="8" -->
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Tube Parameters
-                            - Pipe material, size, schedule, desired safety factor<!-- .element: class="fragment" data-fragment-index="1" -->
-                            - Blockage ratio (BR)<!-- .element: class="fragment" data-fragment-index="2" -->
-                            - Window dimensions and safety factor<!-- .element: class="fragment" data-fragment-index="3" -->
-                            - Window bolt size and number of bolts<!-- .element: class="fragment" data-fragment-index="4" -->
-                            - Gas mixture and state<!-- .element: class="fragment" data-fragment-index="5" -->
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                            # Blockages
-                            ![](images/Blockage.png)<!-- .element: class="fragment" data-fragment-index="1" width="400px" -->
-
-                            <p><font color="#a6cee3">**Tube**</font>, <font color="#1f78b4">**Open area**</font>, <font color="#b2df8a">**Blocked area**</font>, <font color="#33a02c">**Previous obstacles**</font></p><!-- .element: class="fragment" data-fragment-index="1" -->
-
-                            Note:
-                            - Spiraled blockage causes flame acceleration, and thus transition to detonation
-                            - Blockage ratio is used to shorten run-up distance
-                            - User inputs desired BR
-                            - Diameter which gives the user's BR is calculated
-                            - Find closest available size
-                            - Calculate new BR
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                            # Initial Pressure
-                            - Laminar flamespeed using Cantera<!-- .element: class="fragment" data-fragment-index="1" -->
-                            - CJ and reflected states using SD2<!-- .element: class="fragment" data-fragment-index="2" -->
-                            - Iterate until reflected pressure = max allowable<!-- .element: class="fragment" data-fragment-index="3" -->
-                            - ~3-5 iterations<!-- .element: class="fragment" data-fragment-index="4" -->
-
-                            Note:
-                            - Laminar FS: calculated using cantera's FreeFlame solver
-                            - To get initial pressure, reflected state is iteratively guessed and corrected using rato of (max allowable tube pressure) to (current guess reflected pressure)
-                        </script>
-                    </section>
-
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        <script type="text/template">
-                            # High Pressure States
-                            - Requires initial pressure<!-- .element: class="fragment" data-fragment-index="1" -->
-                            - <!-- .element: class="fragment" data-fragment-index="2" -->`sd2.detonations.calculate_cj_speed()`<!-- .element: class="fragment" data-fragment-index="2" -->
-                            - <!-- .element: class="fragment" data-fragment-index="3" -->`sd2.shocks.get_reflected_equil_state_0()`<!-- .element: class="fragment" data-fragment-index="3" -->
-
-                            Note:
-                            CJ and reflected:
-                             -guess state
-                             - iteratively minimize state property error (perturbed temp, specific volume)
-                             - return wave speed and cantera gas object
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Run-up Distance
-                            ![](images/Runup.png)<!-- .element: class="fragment" data-fragment-index="1" width="400px" -->
-                            - Requires initial pressure<!-- .element: class="fragment" data-fragment-index="2" -->
-                            - BR < 0.1 (transport model!)<!-- .element: class="fragment" data-fragment-index="3" -->
-                            - 0.3 <= BR <= 0.75<!-- .element: class="fragment" data-fragment-index="4" -->
-                            - Interpolation<!-- .element: class="fragment" data-fragment-index="5" -->
-
-                            <font size=1><br>Ciccarelli, G., & Dorofeev, S. (2008). Flame acceleration and transition to detonation in ducts.
-                                Progress in Energy and Combustion Science, 34(4), 499–550. https://doi.org/10.1016/j.pecs.2007.11.002</font>
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Flanges
-                            - Max P as function of T: ASME B31.1<!-- .element: class="fragment" data-fragment-index="1" -->
-                            - Lookup from .CSV<!-- .element: class="fragment" data-fragment-index="2" -->
-                            - ASME B16.5 groups 2.1, 2.2, 2.3<!-- .element: class="fragment" data-fragment-index="3" -->
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                            # Window Calculations
-                            ![](images/Window.png)<!-- .element: class="fragment" data-fragment-index="1" height="400px" -->
-
-                            Note:
-                            - User inputs length, width, and factor of safety
-                            - Calculate required thickness for desired FS
-                            - Ceiling to nearest available size (manufacturer dependent)
-                            - Recalculate FS based on available thickness
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                            # Bolt/Plate
-                            - Thread properties from .CSV (ANSI Inch)<!-- .element: class="fragment" data-fragment-index="1" -->
-                            - Material properties from .CSV<!-- .element: class="fragment" data-fragment-index="2" -->
-
-                            ![](images/bolt_tension.png)<!-- .element: class="fragment" data-fragment-index="3" width="200px" -->
-                            ![](images/bolt_shear.png)<!-- .element: class="fragment" data-fragment-index="4" width="200px" -->
-                            ![](images/plate_shear.png)<!-- .element: class="fragment" data-fragment-index="5" width="200px" -->
-
-                            Note:
-                            - Properties and dimensions are imported from csv files
-                            - Bolts must be checked for tensile failure
-                            - Thread shear
-                            - And pull-out
-                            - This was done using equations from Machinery's Handbook
-                            - bolts greater and less than 100 ksi bolt strength
-                            - minimum engagement length is calculated, and is corrected for material differences between bolt and plate
-                        </script>
-                    </section>
+                
+				<section data-markdown>
+                    # Proposal
+                    ---
                 </section>
-
-                <section>
-                    <section data-markdown>
-                        # Results
-                    </section>
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        # Results
-                        ![](images/plots/schedule_study.png)<!-- .element: width="800px" -->
-
-                        Note:
-                        Initial pressure vs. schedule makes pretty good sense, but what the hell is happening with double extra heavy?
-                    </section>
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        # Results
-                        ![](images/plots/schedule_study_QUESTION.png)<!-- .element: width="800px" -->
-
-                        Note:
-                        Took a look at reflection pressure, which should be identically the tube maximum
-                    </section>
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        # Results
-                        ![](images/plots/schedule_study_max_BAD.png)<!-- .element: width="800px" -->
-
-                        Note:
-                        Obviously something is wrong. What about if we keep the schedule constant and vary the nominal size?
-                    </section>
-
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        # Results
-                        ![](images/plots/size_study.png)<!-- .element: width="800px" -->
-
-                        Note: Hmm... What's going on here?
-                    </section>
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        # Results
-                        ![](images/plots/size_study_QUESTION.png)<!-- .element: width="800px" -->
-
-                        Note:
-                        Looking at the reflection pressure again, these values are obviously bad.
-                    </section>
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        # Results
-                        ![](images/plots/size_study_max_BAD.png)<!-- .element: width="800px" -->
-
-                        Note:
-                        How about initial temperature?
-                    </section>
-
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        # Results
-                        ![](images/plots/temperature_study.png)<!-- .element: width="800px" -->
-
-                        Note:
-                        Looks nice, except the tube should be weaker at higher temperatures, and the initial pressure should go DOWN
-                    </section>
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        # Results
-                        ![](images/plots/temperature_study_BAD.png)<!-- .element: width="800px" -->
-
-                        Notes:
-                        so that's messed up too. Let's look at the reflected pressure again.
-                    </section>
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        # Results
-                        ![](images/plots/temperature_study_max.png)<!-- .element: width="800px" -->
-
-                        Note:
-                        Well that's neat.
-                        This can all be explained by problems with initial pressure estimation, which I'm going to have to take a look at
-                    </section>
-
-                    <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                        # Results
-                        ![](images/plots/bolt_study.png)<!-- .element: width="800px" -->
-
-                        Note:
-                        Happily, the hardware safety factors make sense, and if the bolts fail my tube won't be damaged. Yay!
-                    </section>
+                
+				<section data-markdown>
+                    # Background
+                    ---
                 </section>
-
-                <section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Future Work
-                        <font color="#a92020">
-                        - Fix Problems!</span><!-- .element: class="fragment" data-fragment-index="1" -->
-                        <font color="#ffffff">
-                        - Documentation<!-- .element: class="fragment" data-fragment-index="2" -->
-                        - 'Box of tools' is a pain to implement!<!-- .element: class="fragment" data-fragment-index="3" -->
-                        - Group functions into classes<!-- .element: class="fragment" data-fragment-index="4" -->
-                        - Deploy to anaconda cloud<!-- .element: class="fragment" data-fragment-index="5" -->
-                        - SD2 speedup using cython<!-- .element: class="fragment" data-fragment-index="6" -->
-                        - Test matrix generator<!-- .element: class="fragment" data-fragment-index="7" -->
-                        - Schlieren image analysis<!-- .element: class="fragment" data-fragment-index="8" -->
-
-                        Note:
-                        - Problems shown in previous slides can all be explained by faulty initial pressure estimation
-                        - Unit testing did not catch this bug -- WIDEN RANGE
-                    </script>
+                
+				<section data-markdown>
+                    # Methods
+                    ---
+                </section>
+                
+				<section data-markdown>
+                    # Results
+                    ---
+                </section>
+                
+				<section data-markdown>
+                    # Papers
+                    ---
+                </section>
+                
+				<section data-markdown>
+                    # Timeline
+                    ---
+                </section>
+                
+				<section data-markdown>
+                    # Sources
+                    ---
                 </section>
 			</div>
 		</div>
@@ -372,31 +87,12 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-                // Use markdown
-                markdown: {
-                    smartypants: true
-                },
-
-                // Hide progress bar
-                progress: false,
-
-                // Show current fragment in URL for convenient refreshing
-                fragments: true,
-                fragmentInURL: true,
-
-                // Remove slide transitions
-                transition: 'none',
-
-                // Push each slide change to the browser history
-	            history: true,
-
-                // Load dependencies
+                center: false,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true,
-                    callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
