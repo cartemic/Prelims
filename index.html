@@ -20,6 +20,9 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+        <style>
+            .reveal section img { background:none; border:none; box-shadow:none; }
+        </style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -32,49 +35,307 @@
                     09 November 2018
                 </section>
                 
-				<section data-markdown>
-                    # Introduction
-                    ---
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Introduction
+                        ---
+                        **What is a detonation?**  
+                        ![](images/flame.svg)<!-- .element: class="fragment" data-fragment-index="1" height="150px" -->  
+                        ![](images/fast.svg)<!-- .element: class="fragment" data-fragment-index="2" height="150px"-->
+                        
+                        Note:
+                        * Chemical reaction front couples with a pressure shock
+                        * Fast
+                          * supersonic relative to reactants
+                          * km/s
+                    </script>
                 </section>
                 
-				<section data-markdown>
-                    # Motivation
-                    ---
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Introduction
+                        ---
+                        **Why do we care about detonations?**  
+                        * Safety <!-- .element: class="fragment" data-fragment-index="1" -->
+                        * Thrust <!-- .element: class="fragment" data-fragment-index="2" -->
+                        * Power? <!-- .element: class="fragment" data-fragment-index="3" -->
+                        * Efficiency <!-- .element: class="fragment" data-fragment-index="4" -->
+                        * Cool! <!-- .element: class="fragment" data-fragment-index="5" -->
+                        
+                        Note:
+                        * Safety
+                            * Many studies (e.g. Stamps 1991) focused on detonation prevention
+                            * Reactors - water split into H2 and O2 - detonation!
+                        * Thrust: AFRL scaled composites plane
+                        * Power: Bean and Matt MHD study for NETL
+                        * Efficiency
+                            * Pressure gain increases potential efficiency
+                            * 30-50%
+                            * Discuss in detail later
+                        * I like detonations
+                    </script>
                 </section>
                 
-				<section data-markdown>
-                    # Proposal
-                    ---
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Motivation
+                        ---
+                        Show humphrey cycle vs. brayton with efficiency comparison
+                    </script>
                 </section>
                 
-				<section data-markdown>
-                    # Background
-                    ---
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Motivation
+                        ---
+                        **Pulse Detonation Engines (PDE)**
+                        
+                        
+                        ![P-Lab PDE](images/Thrust.png) <!-- .element: width="1000px" -->
+                        <center><font size="-1">PDE in operation, photo courtesy of Derek Bean</font></center>
+                    </script>
                 </section>
                 
-				<section data-markdown>
-                    # Methods
-                    ---
+				<section data-separator-notes="^Note:">
+                    <h1>Motivation</h1>
+                    <hr>
+                    <b>Pulse Detonation Engines (PDE)</b>  
+                    <div style="position:relative; width:640px; height:375px; margin:0 auto;">
+                      <img width="640" height="375" src="images/Derek_PDE_Cycle.svg" style="position:absolute;top:0;left:0;" />
+                      <img class="fragment fade-in" width="640" height="375" src="images/Derek_PDE_Cycle_2.svg" style="position:absolute;top:0;left:0;" />
+                    </div>
+                    <center><font size="-1">Cycle diagram courtesy of Derek Bean</font></center>
+                    <aside class="notes">
+                        <ul>
+                            <li> Shows cycle of PDE operation </li>
+                            <li> AFTER DETONATION EXITS TUBE ADVANCE SLIDE </li>
+                            <li> Reactant-product mixing happens due to high cycle rates and no purge </li>
+                            <li> This can change detonation behavior </li>
+                        </ul>
+                    </aside>
                 </section>
                 
-				<section data-markdown>
-                    # Results
-                    ---
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Motivation
+                        ---
+                        **Rotating Detonation Engines (RDE)**  
+                    </script>
                 </section>
                 
-				<section data-markdown>
-                    # Papers
-                    ---
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Motivation
+                        ---
+                        **Reactant and Product Mixing**
+                    </script>
                 </section>
                 
-				<section data-markdown>
-                    # Timeline
-                    ---
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Motivation
+                        ---
+                        Show derek's velocity suppression plot
+                    </script>
                 </section>
                 
-				<section data-markdown>
-                    # Sources
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Motivation
+                        ---
+                        **Tie it all together and show why this is important**
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Background
+                        ---
+                        **Anatomy of a Detonation**
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Background
+                        ---
+                        **Mixture Chemistry Effects**
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Background
+                        ---
+                        **Initial Thermodynamic State Effects**  
+                        pressure and temperature plots
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Background
+                        ---
+                        **Geometric Effects**
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Background
+                        ---
+                        **Cell Size Measurement**  
+                        Introduce methods
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Background
+                        ---
+                        **Cell Size Measurement**  
+                        Soot Foil method
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Background
+                        ---
+                        **Cell Size Measurement**  
+                        Schlieren method
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Proposal
+                        ---
+                        **Objectives**
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Proposal
+                        ---
+                        **Tasks**
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Proposal
+                        ---
+                        **Studies**  
+                        List all studies
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Proposal
+                        ---
+                        **Studies:** Cell Size Measurement
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Proposal
+                        ---
+                        **Studies:** Methane Dilution
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Proposal
+                        ---
+                        **Studies:** Propane Dilution
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Proposal
+                        ---
+                        **Studies:** Software Development
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Proposal
+                        ---
+                        **Timeline**
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Detonation Tube:** Overview
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Detonation Tube:** Ignition/DDT
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Detonation Tube:** Viewing Section
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Detonation Tube:** Schlieren
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Detonation Tube:** Speed Measurement  
+                        show diodes
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Detonation Tube:** Speed Measurement  
+                        preliminary data
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Detonation Tube:** Chemical Sensitivity Analysis
+                    </script>
+                </section>
+                
+				<section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                    # Questions?
                     ---
+                    ![Professor McWigglington](images/professor_mcwigglington.png)<!-- .element: height="400px" --><font size="-1">
+                    </script>
                 </section>
 			</div>
 		</div>
@@ -95,6 +356,9 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+            // Shows the slide number using default formatting
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
 		</script>
 	</body>
 </html>
