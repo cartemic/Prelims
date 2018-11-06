@@ -60,7 +60,7 @@
 
 ## Timeline
 
-# Methods/preliminary results
+# Methods
 
 ## Tube
 
@@ -70,13 +70,9 @@
 
 #### Viewing section
 
-#### Speed measurement
-
-## Data collection and analysis
-
 #### Schlieren
 
-#### Wave speed (with results)
+#### Speed measurement (with results)
 
 ## Chemical sensitivity analysis
 
