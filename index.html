@@ -76,12 +76,30 @@
                     </script>
                 </section>
                 
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Motivation
-                        ---
-                        Show humphrey cycle vs. brayton with efficiency comparison
-                    </script>
+                <section>
+                    <h1>Motivation</h1>
+                    <hr>
+                    <img src="images/cycle_comparison.png" width=600px /><br />
+                    <div style="position:relative; width:200px; margin:0 auto; display:inline-block">
+                        <img src="images/eta_b.svg" class="fragment" data-fragment-index="0" /> 
+                    </div> &nbsp &nbsp
+                    <div style="position:relative; width:181px; margin:0 auto; padding:0 0; display:inline-block;">
+                      <img class="fragment" data-fragment-index="1" src="images/eta_h.svg" width="181" align="left"/>
+                      <img class="fragment fade-in" data-fragment-index="2" src="images/eta_h_2.svg" width="181" style="position:absolute;top:0;left:0;">
+                    </div> &nbsp &nbsp
+                    <div style="position:relative; width:200px; margin:0 auto; display:inline-block">
+                        <img src="images/eta_comp.svg" class="fragment" data-fragment-index="3" />
+                    </div><br />
+                    <center><font size="-1"><b>Source:</b> M. Coleman, “Overview of Pulse Detonation Propulsion Technology,” Chemical Propulsion Information Agency, Columbia, MD, Tech. Rep. April, 2001.</font></center>
+                    <aside class="notes">
+                        <ul>
+                            <li> To illustrate the importance of detonation cycles, consider the T-s and P-v diagrams shown </li>
+                            <li> <b>Brayton</b>: constant pressure heat addition <b>advance to show efficiency</b> </li>
+                            <li> <b>Humphrey</b>: constant volume heat addition (approx. detonation) <b>advance to show efficiency</b> </li>
+                            <li> <b>advance</b> the difference between the efficiencies is these terms </li>
+                            <li> <b>advance</b> since these will always be less than 1, Humphrey > Brayton (30-50%) </li>
+                        </ul>
+                    </aside>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
@@ -120,6 +138,23 @@
                         # Motivation
                         ---
                         **Rotating Detonation Engines (RDE)**  
+                        
+                        <img src="images/schwer_RDE.png" style="vertical-align:middle;" /><!-- .element: class="fragment" data-fragment-index="1" width="400px" -->
+                        &nbsp; &nbsp;
+                        <img src="images/RDE_mixing_schwer.png" style="vertical-align:middle;" /><!-- .element: class="fragment" data-fragment-index="2" width="400px" -->
+                        
+                        
+                        <p><font size="-1"><b>Images modified from:</b> D. Schwer and K. Kailasanath, “Numerical investigation of the physics of rotating-detonation-engines,” Proc. Comb. Inst., vol. 33, pp. 2195–2202, 2011.</font></p><!-- .element: class="fragment" data-fragment-index="1" -->
+                        
+                        Note:
+                        * RDEs generate thrust using a steady detonation wave traveling around an annular cavity
+                        
+                        **advance** to first image
+                        * Reactant inflow is controlled by stagnation due to detonation pressure
+                        
+                        **advance** to second image
+                        * Unrolled wave propagating left to right
+                        * Reactant-product mixing shown in orange
                     </script>
                 </section>
                 
@@ -128,6 +163,13 @@
                         # Motivation
                         ---
                         **Reactant and Product Mixing**
+                        
+                        <img src="images/bean_velocity.png" width="400">
+                        
+                        <font size="-1"><b>Source:</b> D. R. Bean et al., “Effect of combustion products on detonation velocities,” in 10th U.S. National Combustion Meeting, no. 1K20, 2017</font></p>
+                        
+                        Note:
+                        ADD NOTES
                     </script>
                 </section>
                 
@@ -135,32 +177,92 @@
                     <script type="text/template">
                         # Motivation
                         ---
-                        Show derek's velocity suppression plot
+                        **Recap**
+                        
+                        * Increased efficiency <!-- .element: class="fragment" data-fragment-index="0" -->
+                        * Reactant/product mixing <!-- .element: class="fragment" data-fragment-index="1" -->
+                        * Potential chemical effects <!-- .element: class="fragment" data-fragment-index="2" -->
+                        
+                        Note:
+                        **Recap:** why do we care about detonations?
+                        
+                        **advance**
+                        * Detonation cycles can give increased efficiency over deflagrations
+                        * Interest in their use for propulsion
+                        * PDEs and RDEs are a way to harness detonations for this purpose
+                        
+                        **advance**
+                        * However, both experience reactant and product mixing
+                            * RDE: caused by cycle rate
+                            * PDE: caused by operating principles
+                        * This may be an issue because of
+                        
+                        **advance**
+                        * potential chemical effects on the behavior of detonations
+                        
+                        With this information in mind, let's talk a bit about detonations
                     </script>
                 </section>
                 
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Motivation
-                        ---
-                        **Tie it all together and show why this is important**
-                    </script>
+                <section>
+                    <h1>Background</h1>
+                    <hr>
+                    <b>Anatomy of a Detonation</b>
+                    
+                    
+                    <div style="position:relative; width:800px; height:279px; margin:0 auto;">
+                      <img width="800" height="279" src="images/Radulescu_detonation.png" style="position:absolute;top:0;left:0;" />
+                      <p class="fragment fade-out" data-fragment-index="1"><img class="fragment fade-in" data-fragment-index="0" width="800" height="279" src="images/rad_incident.png" style="position:absolute;top:0;left:0;" /></p>
+                      <p class="fragment fade-out" data-fragment-index="2"><img class="fragment fade-in" data-fragment-index="1" width="800" height="279" src="images/rad_mach.png" style="position:absolute;top:0;left:0;" /></p>
+                      <p class="fragment fade-out" data-fragment-index="3"><img class="fragment fade-in" width="800" data-fragment-index="2" height="279" src="images/rad_transverse.png" style="position:absolute;top:0;left:0;" /></p>
+                      <img class="fragment fade-in" width="800" data-fragment-index="3" height="279" src="images/rad_triple.png" style="position:absolute;top:0;left:0;" />
+                      <img class="fragment fade-in" width="800" data-fragment-index="4" height="279" src="images/rad_cell.png" style="position:absolute;top:0;left:0;" />
+                    </div>
+                    
+                    <font size="-1"><b>Source:</b> M. I. Radulescu, G. J. Sharpe, C. K. Law, and J. H. S. Lee, “The hydrodynamic structure of unstable cellular detonations,” J. Fluid Mech., vol. 580, no. 2007, p. 31, 2007.</font>
+                    <aside class="notes">
+                        <ul>
+                            <li> <b>Incident shock</b> </li>
+                                <ul>
+                                    <li> strongest </li>
+                                    <li> longest induction zone </li>
+                                    <li> move directly into reactants </li>
+                                </ul>
+                            <li> <b>Mach shock</b> </li>
+                                <ul>
+                                    <li> weaker </li>
+                                    <li> shorter induction zone </li>
+                                    <li> move obliquely into reactants </li>
+                                </ul>
+                            <li> <b>Transverse shock</b> </li>
+                                <ul>
+                                    <li> longest induction zone </li>
+                                    <li> move transversely behind detonation front </li>
+                                    <li> caused by collisions (walls, other trans. waves) </li>
+                                </ul>
+                            <li> <b>Triple point</b> is where these shocks meet </li>
+                            <li> <b>Detonation cell</b> </li>
+                        </ul>
+                    </aside>
                 </section>
                 
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Background
-                        ---
-                        **Anatomy of a Detonation**
-                    </script>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Background
-                        ---
-                        **Mixture Chemistry Effects**
-                    </script>
+                <section>
+                    <h1>Background</h1>
+                    <hr>
+                    <b>Mixture Chemistry Effects</b><br>
+                    <div style="position:relative; width:238px; height:375px; margin:0 auto; display:inline-block;">
+                      <img width="238" height="375" src="images/lee_cells.png" style="position:absolute;top:0;left:0;" />
+                      <p class="fragment fade-out" data-fragment-index="1"><img class="fragment fade-in" data-fragment-index="0" width="238" height="375" src="images/lee_cells_equiv.png" style="position:absolute;top:0;left:0;" /></p>
+                      <img class="fragment fade-in" data-fragment-index="1" width="238" height="375" src="images/lee_cells_init.png" style="position:absolute;top:0;left:0;" />
+                    </div><br>
+                    
+                    <font size="-1"><b>Source:</b> M. I. Radulescu, G. J. Sharpe, C. K. Law, and J. H. S. Lee, “The hydrodynamic structure of unstable cellular detonations,” J. Fluid Mech., vol. 580, no. 2007, p. 31, 2007.</font>
+                    <aside class="notes">
+                        <ul>
+                            <li> Equivalence decreases cell size until approx 1, after which it increases (thought to be due to dominant reaction shift) </li>
+                            <li> Cell size increases with direct initiation energy (shows cell size as a measure of detonability) </li>
+                        </ul>
+                    </aside>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
@@ -212,6 +314,17 @@
                         # Proposal
                         ---
                         **Objectives**
+                        
+                        1. Cell size measurement fidelity <!-- .element: class="fragment" data-fragment-index="0" -->
+                        2. CO$_2$ and NO effects <!-- .element: class="fragment" data-fragment-index="1" -->
+                        3. Chemical kinetic causes <!-- .element: class="fragment" data-fragment-index="2" -->
+                        4. Varying carbon number <!-- .element: class="fragment" data-fragment-index="3" -->
+            
+                        Note:
+                        1. Evaluate the fidelity of using focusing schlieren measurements to measure cell sizes
+                        2. Identify how the presence of CO2 and NO affect the detonation speed and characteristic cell sizes of detonations
+                        3. Discover the change in chemical kinetics driving the behavioral shift caused by CO2 and NO dilution
+                        4. Identify how a mixture's sensitivity to combustion product dilution changes as the carbon content of the fuel is varied
                     </script>
                 </section>
                 
@@ -220,6 +333,34 @@
                         # Proposal
                         ---
                         **Tasks**
+                        <ol style="font-size:32px">
+                            <li> Compare measurement techniques <!-- .element: class="fragment" data-fragment-index="0" -->
+                            **(objective 1)** <!-- .element: class="fragment" data-fragment-index="0" -->
+                            <li> Undiluted detonations <!-- .element: class="fragment" data-fragment-index="1" -->
+                            **(objective 2)** <!-- .element: class="fragment" data-fragment-index="1" -->
+                            <li> Inert diluted detonations <!-- .element: class="fragment" data-fragment-index="2" -->
+                            **(objective 2)** <!-- .element: class="fragment" data-fragment-index="2" -->
+                            <li> Product diluted detonations <!-- .element: class="fragment" data-fragment-index="3" -->
+                            **(objective 2)** <!-- .element: class="fragment" data-fragment-index="3" -->
+                            <li> Simulate measured detonations <!-- .element: class="fragment" data-fragment-index="4" -->
+                            **(objective 3)** <!-- .element: class="fragment" data-fragment-index="4" -->
+                            <li> Sensitivity analysis <!-- .element: class="fragment" data-fragment-index="5" -->
+                            **(objective 3)** <!-- .element: class="fragment" data-fragment-index="5" -->
+                            <li> Different fuel <!-- .element: class="fragment" data-fragment-index="6" -->
+                            **(objective 4)** <!-- .element: class="fragment" data-fragment-index="6" -->
+                            <li> Software package <!-- .element: class="fragment" data-fragment-index="7" -->
+                            **(objectives 1, 2, 3, and 4)** <!-- .element: class="fragment" data-fragment-index="7" -->
+                        </ol>
+                        
+                        Note:
+                        1. Directly compare the soot foil and focusing schlieren methods of detonation cell measurement (objective 1);
+                        2. Measure detonation cell sizes and wave speeds in undiluted mixtures (objective 2);
+                        3. Measure detonation cell sizes and wave speeds in mixtures diluted with inert species (objective 2);
+                        4. Measure detonation cell sizes and wave speeds in mixtures diluted with combustion product species (objective 2);
+                        5. Calculate predicted detonation properties and cell sizes for experimentally measured mixtures (objective 3);
+                        6. Perform a chemical sensitivity analysis to ascertain which chemical pathways are responsible for the hypothesized change in detonation behavior (objective 3);
+                        7. Repeat tasks 2-6 for fuels with different carbon contents (objective 4);
+                        8. Develop a software package allowing the results of this study to be easily reproduced by other researchers (objectives 1, 2, 3, and 4).
                     </script>
                 </section>
                 
@@ -228,7 +369,11 @@
                         # Proposal
                         ---
                         **Studies**  
-                        List all studies
+                        
+                        * Cell size measurement <!-- .element: class="fragment" data-fragment-index="0" -->
+                        * Dilution in methane-nitrous mixtures <!-- .element: class="fragment" data-fragment-index="1" -->
+                        * Dilution in propane mixtures <!-- .element: class="fragment" data-fragment-index="2" -->
+                        * Software development <!-- .element: class="fragment" data-fragment-index="3" -->
                     </script>
                 </section>
                 
@@ -244,7 +389,7 @@
                     <script type="text/template">
                         # Proposal
                         ---
-                        **Studies:** Methane Dilution
+                        **Studies:** Dilution in Methane-Nitrous Mixtures
                     </script>
                 </section>
                 
@@ -252,7 +397,7 @@
                     <script type="text/template">
                         # Proposal
                         ---
-                        **Studies:** Propane Dilution
+                        **Studies:** Dilution in Propane-Nitrous Mixtures
                     </script>
                 </section>
                 
@@ -269,6 +414,11 @@
                         # Proposal
                         ---
                         **Timeline**
+                        
+                        <img src="images/Timeline.png", width="800">
+                        
+                        Note:
+                        ADD NOTES
                     </script>
                 </section>
                 
@@ -277,6 +427,11 @@
                         # Methods
                         ---
                         **Detonation Tube:** Overview
+                        
+                        <img src="images/Tube_2_9_2018.png" width="1000">
+                        
+                        Note:
+                        ADD NOTES
                     </script>
                 </section>
                 
@@ -285,6 +440,13 @@
                         # Methods
                         ---
                         **Detonation Tube:** Ignition/DDT
+                        
+                        &nbsp;
+                        
+                        <img src="images/DDT.png" width="1000">
+                        
+                        Note:
+                        ADD NOTES
                     </script>
                 </section>
                 
@@ -292,7 +454,11 @@
                     <script type="text/template">
                         # Methods
                         ---
-                        **Detonation Tube:** Viewing Section
+                        **Detonation Tube:** Viewing Section  
+                        <img src="images/viewing_section.png" height="400">
+                        
+                        Note:
+                        ADD NOTES
                     </script>
                 </section>
                 
@@ -301,6 +467,11 @@
                         # Methods
                         ---
                         **Detonation Tube:** Schlieren
+                        
+                        <img src="images/Schlieren.png" width="800">
+                        
+                        Note:
+                        ADD NOTES
                     </script>
                 </section>
                 
@@ -309,7 +480,11 @@
                         # Methods
                         ---
                         **Detonation Tube:** Speed Measurement  
-                        show diodes
+                        
+                        <img src="images/diodes.png" width="800">
+                        
+                        Note:
+                        ADD NOTES
                     </script>
                 </section>
                 
@@ -353,6 +528,7 @@
                 progress: true,
                 history: true,
                 dependencies: [
+                    { src: 'plugin/math/math.js', async: true},
                     { src: 'plugin/markdown/marked.js' },
                     { src: 'plugin/markdown/markdown.js' },
                     { src: 'plugin/notes/notes.js', async: true },
