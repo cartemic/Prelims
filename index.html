@@ -98,6 +98,7 @@
                             <li> <b>Humphrey</b>: constant volume heat addition (approx. detonation) <b>advance to show efficiency</b> </li>
                             <li> <b>advance</b> the difference between the efficiencies is these terms </li>
                             <li> <b>advance</b> since these will always be less than 1, Humphrey > Brayton (30-50%) </li>
+                            <li> Now let's look at some technologies that use detonations to produce thrust. <b>ADVANCE TO NEXT</b>
                         </ul>
                     </aside>
                 </section>
@@ -111,10 +112,13 @@
                         
                         ![P-Lab PDE](images/Thrust.png) <!-- .element: width="1000px" -->
                         <center><font size="-1">PDE in operation, photo courtesy of Derek Bean</font></center>
+                        
+                        Note:
+                        ADD NOTES
                     </script>
                 </section>
                 
-                <section data-separator-notes="^Note:">
+                <section>
                     <h1>Motivation</h1>
                     <hr>
                     <b>Pulse Detonation Engines (PDE)</b>  
@@ -256,11 +260,76 @@
                       <img class="fragment fade-in" data-fragment-index="1" width="238" height="375" src="images/lee_cells_init.png" style="position:absolute;top:0;left:0;" />
                     </div><br>
                     
-                    <font size="-1"><b>Source:</b> M. I. Radulescu, G. J. Sharpe, C. K. Law, and J. H. S. Lee, “The hydrodynamic structure of unstable cellular detonations,” J. Fluid Mech., vol. 580, no. 2007, p. 31, 2007.</font>
+                    <font size="-1"><b>Source:</b> J. H. S. Lee, “Dynamic Parameters of Gaseous Detonations,” Annual Review of Fluid Mechanics, vol. 16, no. 1, pp. 311–336, 1984.</font>
                     <aside class="notes">
                         <ul>
-                            <li> Equivalence decreases cell size until approx 1, after which it increases (thought to be due to dominant reaction shift) </li>
+                            <li> Equivalence decreases cell size until approx 1, after which it increases (effect of heat release) </li>
                             <li> Cell size increases with direct initiation energy (shows cell size as a measure of detonability) </li>
+                        </ul>
+                    </aside>
+                </section>
+                
+                <section>
+                    <h1>Background</h1>
+                    <hr>
+                    <b>Initial Thermodynamic State:</b> Pressure  
+                    <img src="images/ng_pressure.png" height="325" /><br>
+                    <font size="-2"><b>Source:</b> H. D. Ng, Y. Ju, and J. H. S. Lee, “Assessment of detonation hazards in high-pressure hydrogen storage from chemical sensitivity analysis,” Int. J. Hydrogen Energy, vol. 32, no. 1, pp. 93–99, 2007</font>
+                    <aside class="notes">
+                        <ul>
+                            <li> H2-O2 system </li>
+                            <li> dip is likely due to shift in dominant reaction due to 2nd explosive limit (H2-O2 Z plot) </li>
+                        </ul>
+                    </aside>
+                </section>
+                
+                <section>
+                    <h1>Background</h1>
+                    <hr>
+                    <b>Initial Thermodynamic State:</b> Temperature  
+                    <img src="images/sandia_temperature.jpg" height="325" /><br>
+                    <font size="-2"><b>Source:</b> D. Stamps, W. Benedick, and S. Tieszen, “Hydrogen–air–diluent detonation study for nuclear reactor safety analyses,” Sandia National Laboratories, Albuquerque, NM, Tech. Rep. NUREG/CR-5525, January 1991.</font>
+                    <aside class="notes">
+                        <ul>
+                            <li> H2-air system with CO2 dilution</li>
+                            <li> RHS behavior due to shift in dominant reaction due to 2nd explosive limit (per Stamps and Tieszen 1991) </li>
+                            <li> Experimental temperature only up to 440 K </li>
+                            <li> -> most affected reactions not determined </li>
+                            <li> -> thermal effects of diluents not isolated from chemical effects </li>
+                            <li> -> no hydrocarbon decomposition reactions </li>
+                        </ul>
+                    </aside>
+                    </script>
+                </section>
+                
+                <section>
+                    <h1>Background</h1>
+                    <hr>
+                    <b>Geometric Effects</b><br>
+                    <img src="images/guirao_critical_cell.png" height="325" /><br>
+                    <font size="-21"><b>Source:</b> C. M. Guirao, R,. Knystautas, J. H. Lee, “A Summary of Hydrogen-Air Detonation Experiments,” Sandia National Laboratories, Albuquerque, NM, Tech. Rep. NUREG/CR-4961, May 1989.</font>
+                    <aside class="notes">
+                        <b>Critical diameter:</b> minimum diameter from which a steady planar detonation wave can emerge from a tube and propagate spherically<p />
+                        The big takeaway here is that tube diameter can inhibit detonation.
+                    </aside>
+                </section>
+                
+                <section>
+                    <h1>Background</h1>
+                    <hr>
+                    <b>Cell Size Measurement</b><br>
+                    <div style="position:relative; width:446px; height:325px; margin:0 auto; display:inline-block;">
+                      <img width="446" height="325" src="images/Lee_text_cells.png" style="position:absolute;top:0;left:0;" />
+                      <img class="fragment fade-in" data-fragment-index="0" width="446" height="325" src="images/lee_cell_arrow1.png" style="position:absolute;top:0;left:0;" />
+                      <img class="fragment fade-in" data-fragment-index="1" width="446" height="325" src="images/lee_cell_arrow2.png" style="position:absolute;top:0;left:0;" />
+                    </div><br>
+                    <font size="-1"><b>Source:</b> J. H. S. Lee, The Detonation Phenomenon. Cambridge University Press, 2008.</font>
+                    <aside class="notes">
+                        <ul>
+                            <li> Cell width is measured from top to bottom, as shown </li>
+                            <b>advance</b>
+                            <li> All cells are measured, and mean cell size is reported </li>
+                            <li> Methods: soot foil (shown) and schlieren </li>
                         </ul>
                     </aside>
                 </section>
@@ -269,43 +338,46 @@
                     <script type="text/template">
                         # Background
                         ---
-                        **Initial Thermodynamic State Effects**  
-                        pressure and temperature plots
+                        **Cell Size Measurement:** Soot Foil method
+                        * Intrusive <!-- .element: class="fragment" data-fragment-index="0" -->
+                        * Measured at walls or end <!-- .element: class="fragment" data-fragment-index="1" -->
+                        * Can get length/width <!-- .element: class="fragment" data-fragment-index="2" -->
+                        * Inexpensive <!-- .element: class="fragment" data-fragment-index="3" -->
+                        * Inconsistent <!-- .element: class="fragment" data-fragment-index="4" -->
+                        * Subjective <!-- .element: class="fragment" data-fragment-index="5" -->
+                        
+                        Note:
+                        * Soot is removed by passage of triple points
+                        * Width is more important than length (critical diameter)
+                        * Inconsistency in measurement from uneven soot coating
+                        * Subjective: factor of 1.6 between Stamps and Tieszen (SBT 1991)
+                        * Can improve measurements by hand-tracing and digitizing (Lee 1993)
                     </script>
+                </section>
+                
+                <section>
+                    <h1>Background</h1>
+                    <hr>
+                    <b>Cell Size Measurement:</b> Schlieren Method<br>
+                    <img src="images/Radulescu_detonation_schlieren.png" height="325" /><br>
+                    <font size="-2"><b>Source:</b> M. I. Radulescu, G. J. Sharpe, C. K. Law, and J. H. S. Lee, “The hydrodynamic structure of unstable cellular detonations,” J. Fluid Mech., vol. 580, no. 2007, p. 31, 2007.</font>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
                     <script type="text/template">
                         # Background
                         ---
-                        **Geometric Effects**
-                    </script>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Background
-                        ---
-                        **Cell Size Measurement**  
-                        Introduce methods
-                    </script>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Background
-                        ---
-                        **Cell Size Measurement**  
-                        Soot Foil method
-                    </script>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Background
-                        ---
-                        **Cell Size Measurement**  
-                        Schlieren method
+                        **Cell Size Measurement:** Schlieren Method
+                        * Non-intrusive <!-- .element: class="fragment" data-fragment-index="0" -->
+                        * Measure anywhere within test section <!-- .element: class="fragment" data-fragment-index="1" -->
+                        * Can only measure cell width <!-- .element: class="fragment" data-fragment-index="2" -->
+                        * Expensive <!-- .element: class="fragment" data-fragment-index="3" -->
+                        * More consistent <!-- .element: class="fragment" data-fragment-index="4" -->
+                        * Less subjective <!-- .element: class="fragment" data-fragment-index="5" -->
+                        
+                        Note:
+                        * Schlieren and soot foils have been utilized simultaneously, **but not for cell size measurement**
+                        * Schlieren data have only been compared to historical soot foil cell sizes **not within the same experiment**
                     </script>
                 </section>
                 
@@ -382,6 +454,34 @@
                         # Proposal
                         ---
                         **Studies:** Cell Size Measurement
+                        <font size="6">
+                        <ul>
+                            <li>Soot foil vs. schlieren</li> <!-- .element: class="fragment" data-fragment-index="0" -->
+                            <li>Schlieren through vertical windows</li> <!-- .element: class="fragment" data-fragment-index="1" -->
+                            <li>Soot foils on horizontal windows</li> <!-- .element: class="fragment" data-fragment-index="2" -->
+                            <li>Direct comparison of measurements</li> <!-- .element: class="fragment" data-fragment-index="3" -->
+                        </ul> <br> <br>
+                        </font>
+                        <font size="5">
+                        <table style="border-collapse: collapse; border: none;">
+                            <tr style="border:none;">
+                                <td style="border:none;" width="210">
+                                    **Anticipated title:**
+                                </td>
+                                <td style="border:none;">
+                                    Direct Comparison of Schlieren and Soot Foil Measurements of Gaseous Detonation Cells
+                                </td>
+                            </tr>
+                            <tr style="border:none;">
+                                <td style="border:none;">
+                                    **Anticipated journal:**
+                                </td>
+                                <td style="border:none;">
+                                    Measurement or Measurement Science and Technology
+                                </td>
+                            </tr>
+                        </table> <!-- .element: class="fragment" data-fragment-index="4" -->
+                        </font>
                     </script>
                 </section>
                 
@@ -390,6 +490,34 @@
                         # Proposal
                         ---
                         **Studies:** Dilution in Methane-Nitrous Mixtures
+                        <font size="6">
+                        <ul>
+                            <li>CH$_4$-N$_2$O at $\Phi$ = 0.4, 0.7, 1.0</li> <!-- .element: class="fragment" data-fragment-index="0" -->
+                            <li>CO$_2$ mole fractions 0%, 1.0%, 5.5%, 10.0%</li> <!-- .element: class="fragment" data-fragment-index="1" -->
+                            <li>NO mole fractions 0 ppm, 100 ppm, 550 ppm, 1000 ppm</li> <!-- .element: class="fragment" data-fragment-index="2" -->
+                            <li>Ar dilution to match CO$_2$ specific heat</li> <!-- .element: class="fragment" data-fragment-index="3" -->
+                            <li>Sensitivity analysis</li> <!-- .element: class="fragment" data-fragment-index="4" -->
+                        </ul> <br>
+                        </font>
+                        <font size="5">
+                        <table style="border-collapse: collapse; border: none;">
+                            <tr style="border:none;">
+                                <td style="border:none;" width="210">
+                                    **Anticipated title:**
+                                </td>
+                                <td style="border:none;">
+                                    Causes and Effects of CO$_2$ and NO Dilution on Detonation Behavior in a CH$_4$–N$_2$O System
+                                </td>
+                            </tr>
+                            <tr style="border:none;">
+                                <td style="border:none;">
+                                    **Anticipated journal:**
+                                </td>
+                                <td style="border:none;">
+                                    Combustion and Flame
+                                </td>
+                            </tr>
+                        </table> <!-- .element: class="fragment" data-fragment-index="5" -->
                     </script>
                 </section>
                 
@@ -398,6 +526,34 @@
                         # Proposal
                         ---
                         **Studies:** Dilution in Propane-Nitrous Mixtures
+                        <font size="6">
+                        <ul>
+                            <li>C$_3$H$_8$-N$_2$O at $\Phi$ = 0.4, 0.7, 1.0</li> <!-- .element: class="fragment" data-fragment-index="0" -->
+                            <li>CO$_2$ mole fractions 0%, 1.0%, 5.5%, 10.0%</li> <!-- .element: class="fragment" data-fragment-index="1" -->
+                            <li>NO mole fractions 0 ppm, 100 ppm, 550 ppm, 1000 ppm</li> <!-- .element: class="fragment" data-fragment-index="2" -->
+                            <li>Ar dilution to match CO$_2$ specific heat</li> <!-- .element: class="fragment" data-fragment-index="3" -->
+                            <li>Sensitivity analysis</li> <!-- .element: class="fragment" data-fragment-index="4" -->
+                        </ul> <br>
+                        </font>
+                        <font size="5">
+                        <table style="border-collapse: collapse; border: none;">
+                            <tr style="border:none;">
+                                <td style="border:none;" width="210">
+                                    **Anticipated title:**
+                                </td>
+                                <td style="border:none;">
+                                    Causes and Effects of CO$_2$ and NO Dilution on Detonation Behavior in a C$_3$H$_8$–N$_2$O System
+                                </td>
+                            </tr>
+                            <tr style="border:none;">
+                                <td style="border:none;">
+                                    **Anticipated journal:**
+                                </td>
+                                <td style="border:none;">
+                                    Combustion and Flame
+                                </td>
+                            </tr>
+                        </table> <!-- .element: class="fragment" data-fragment-index="5" -->
                     </script>
                 </section>
                 
@@ -406,6 +562,34 @@
                         # Proposal
                         ---
                         **Studies:** Software Development
+                        <font size="6">
+                        <ul>
+                            <li>DDT run-up calculation</li> <!-- .element: class="fragment" data-fragment-index="0" -->
+                            <li>Safety factor estimation</li> <!-- .element: class="fragment" data-fragment-index="1" -->
+                            <li>Initial pressure estimation</li> <!-- .element: class="fragment" data-fragment-index="2" -->
+                            <li>Cell size and wave speed calculation</li> <!-- .element: class="fragment" data-fragment-index="3" -->
+                            <li>Sensitivity analysis</li> <!-- .element: class="fragment" data-fragment-index="4" -->
+                        </ul> <br>
+                        </font>
+                        <font size="5">
+                        <table style="border-collapse: collapse; border: none;">
+                            <tr style="border:none;">
+                                <td style="border:none;" width="210">
+                                    **Anticipated title:**
+                                </td>
+                                <td style="border:none;">
+                                    BeaverDet: an Open-source Detonation Research Package
+                                </td>
+                            </tr>
+                            <tr style="border:none;">
+                                <td style="border:none;">
+                                    **Anticipated journal:**
+                                </td>
+                                <td style="border:none;">
+                                    The Journal of Open Source Software
+                                </td>
+                            </tr>
+                        </table> <!-- .element: class="fragment" data-fragment-index="5" -->
                     </script>
                 </section>
                 
@@ -488,21 +672,48 @@
                     </script>
                 </section>
                 
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Methods
-                        ---
-                        **Detonation Tube:** Speed Measurement  
-                        preliminary data
-                    </script>
+                <section>
+                    <h1>Methods</h1>
+                    <hr>
+                    <b>Detonation Tube:</b> Speed Measurement<br>
+                    <div style="position:relative; width:1000px; height:400px; margin:0 auto; display:inline-block;">
+                      <img width="1000" height="400" src="images/raw_diode_signal.svg" style="position:absolute;top:0;left:0;" />
+                      <img class="fragment fade-in" data-fragment-index="0" width="1000" height="400" src="images/max_derivative.svg" style="position:absolute;top:0;left:0;" />
+                      <img class="fragment fade-in" data-fragment-index="1" width="1000" height="400" src="images/diode_dt.svg" style="position:absolute;top:0;left:0;" />
+                    </div>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
                     <script type="text/template">
                         # Methods
                         ---
-                        **Detonation Tube:** Chemical Sensitivity Analysis
+                        **Detonation Tube:** Speed Measurement
+                        
+                        
+                        <img src="images/diode_data.svg" width="800" />
+                        
+                        Note:
+                        * **Mean velocity** 93.7 +/- 0.40 percent CJ
+                        * **Mean uncertainty** +/- 8.56 m/s (0.42%)
+                        * Low day-to-day variability
+                            * P value 0.085
+                            * t-score 1.78
+                            * Fail to reject null at 5% signifigance level
+                            * means are the same!
                     </script>
+                </section>
+                
+                <section>
+                    <h1>Methods</h1>
+                    <hr>
+                    <b>Detonation Tube:</b> Chemical Sensitivity Analysis<p />
+                    <img src="images/sensitivity_equations.svg" height="200" style="vertical-align:middle;" class="fragment" data-fragment-index="0" /> 
+                    &nbsp &nbsp 
+                    <img src="images/fuller_sensitivity.png" height="325" style="vertical-align:middle;" class="fragment" data-fragment-index="1" /><br>
+                    <font size="-1" class="fragment" data-fragment-index="1"><b>Source:</b> C. Fuller et al., “Effects of vitiation and pressure on laminar flame speeds of n-decane,” 50th AIAA Aerospace Sciences Meeting, January, 2012.</font>
+                    <aside class="notes">
+                        ADD NOTES
+                    </aside>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
