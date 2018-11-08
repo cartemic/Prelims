@@ -203,17 +203,17 @@
                         * However, both experience reactant and product mixing
                             * RDE: caused by cycle rate
                             * PDE: caused by operating principles
-                        * This may be an issue because of
+                        * This may be an issue due to...
                         
                         **advance**
-                        * potential chemical effects on the behavior of detonations
+                        * potential chemical effects on the behavior of detonations, which could prevent successful detonations
                         
                         With this information in mind, let's talk a bit about detonations
                     </script>
                 </section>
                 
                 <section>
-                    <h1>Background</h1>
+                    <h1>Detonations</h1>
                     <hr>
                     <b>Anatomy of a Detonation</b>
                     
@@ -255,9 +255,9 @@
                 </section>
                 
                 <section>
-                    <h1>Background</h1>
+                    <h1>Detonations</h1>
                     <hr>
-                    <b>Mixture Chemistry Effects</b><br>
+                    <b> Effects of Mixture Chemistry on Cell Size</b><br>
                     <div style="position:relative; width:238px; height:375px; margin:0 auto; display:inline-block;">
                       <img width="238" height="375" src="images/lee_cells.png" style="position:absolute;top:0;left:0;" />
                       <p class="fragment fade-out" data-fragment-index="1"><img class="fragment fade-in" data-fragment-index="0" width="238" height="375" src="images/lee_cells_equiv.png" style="position:absolute;top:0;left:0;" /></p>
@@ -274,9 +274,9 @@
                 </section>
                 
                 <section>
-                    <h1>Background</h1>
+                    <h1>Detonations</h1>
                     <hr>
-                    <b>Initial Thermodynamic State:</b> Pressure  
+                    <b>Effects of Initial Pressure on Cell Size</b>
                     <img src="images/ng_pressure.png" height="325" /><br>
                     <font size="-2"><b>Source:</b> H. D. Ng, Y. Ju, and J. H. S. Lee, “Assessment of detonation hazards in high-pressure hydrogen storage from chemical sensitivity analysis,” Int. J. Hydrogen Energy, vol. 32, no. 1, pp. 93–99, 2007</font>
                     <aside class="notes">
@@ -288,9 +288,9 @@
                 </section>
                 
                 <section>
-                    <h1>Background</h1>
+                    <h1>Detonations</h1>
                     <hr>
-                    <b>Initial Thermodynamic State:</b> Temperature  
+                    <b>EFfects of Initial Temperature on Cell Size</b>
                     <img src="images/sandia_temperature.jpg" height="325" /><br>
                     <font size="-2"><b>Source:</b> D. Stamps, W. Benedick, and S. Tieszen, “Hydrogen–air–diluent detonation study for nuclear reactor safety analyses,” Sandia National Laboratories, Albuquerque, NM, Tech. Rep. NUREG/CR-5525, January 1991.</font>
                     <aside class="notes">
@@ -307,42 +307,33 @@
                 </section>
                 
                 <section>
-                    <h1>Background</h1>
+                    <h1>Detonations</h1>
                     <hr>
-                    <b>Geometric Effects</b><br>
+                    <b>Effects of Tube Geometry on Cell Size</b><br>
                     <img src="images/guirao_critical_cell.png" height="325" /><br>
                     <font size="-21"><b>Source:</b> C. M. Guirao, R,. Knystautas, J. H. Lee, “A Summary of Hydrogen-Air Detonation Experiments,” Sandia National Laboratories, Albuquerque, NM, Tech. Rep. NUREG/CR-4961, May 1989.</font>
                     <aside class="notes">
-                        <b>Critical diameter:</b> minimum diameter from which a steady planar detonation wave can emerge from a tube and propagate spherically<p />
-                        The big takeaway here is that tube diameter can inhibit detonation.
-                    </aside>
-                </section>
-                
-                <section>
-                    <h1>Background</h1>
-                    <hr>
-                    <b>Cell Size Measurement</b><br>
-                    <div style="position:relative; width:446px; height:325px; margin:0 auto; display:inline-block;">
-                      <img width="446" height="325" src="images/Lee_text_cells.png" style="position:absolute;top:0;left:0;" />
-                      <img class="fragment fade-in" data-fragment-index="0" width="446" height="325" src="images/lee_cell_arrow1.png" style="position:absolute;top:0;left:0;" />
-                      <img class="fragment fade-in" data-fragment-index="1" width="446" height="325" src="images/lee_cell_arrow2.png" style="position:absolute;top:0;left:0;" />
-                    </div><br>
-                    <font size="-1"><b>Source:</b> J. H. S. Lee, The Detonation Phenomenon. Cambridge University Press, 2008.</font>
-                    <aside class="notes">
                         <ul>
-                            <li> Cell width is measured from top to bottom, as shown </li>
-                            <b>advance</b>
-                            <li> All cells are measured, and mean cell size is reported </li>
-                            <li> Methods: soot foil (shown) and schlieren </li>
+                            <li> <b>Critical diameter:</b> minimum diameter from which a steady planar detonation wave can emerge from a tube and propagate spherically</li>
+                            <li> Rule of thumb: d $\approx 13\lambda$: critical diameter and cell size are related</li>
+                            <li> Energy required for direct initiation of detonation scales with the cube of cell size</li>
                         </ul>
+                        <b>Takeaway messages:</b>
+                        <ul>
+                            <li> Tube diameter can inhibit detonation.</li>
+                            <li> Cell size is a measure of a mixture's detonability</li>
+                        </ul>
+                        <p>
+                            So cell size is an important parameter of detonations. How is it measured?
+                        </p>
                     </aside>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
                     <script type="text/template">
-                        # Background
+                        # Measurement
                         ---
-                        **Cell Size Measurement:** Soot Foil method
+                        **Detonation Cell Size:** Soot Foil Method
                         * Intrusive <!-- .element: class="fragment" data-fragment-index="0" -->
                         * Measured at walls or end <!-- .element: class="fragment" data-fragment-index="1" -->
                         * Can get length/width <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -360,11 +351,22 @@
                 </section>
                 
                 <section>
-                    <h1>Background</h1>
+                    <h1>Measurement</h1>
                     <hr>
-                    <b>Cell Size Measurement:</b> Schlieren Method<br>
-                    <img src="images/Radulescu_detonation_schlieren.png" height="325" /><br>
-                    <font size="-2"><b>Source:</b> M. I. Radulescu, G. J. Sharpe, C. K. Law, and J. H. S. Lee, “The hydrodynamic structure of unstable cellular detonations,” J. Fluid Mech., vol. 580, no. 2007, p. 31, 2007.</font>
+                    <b>Detonation Cell Size:</b> Soot Foil Method<br>
+                    <div style="position:relative; width:446px; height:325px; margin:0 auto; display:inline-block;">
+                      <img width="446" height="325" src="images/Lee_text_cells.png" style="position:absolute;top:0;left:0;" />
+                      <img class="fragment fade-in" data-fragment-index="0" width="446" height="325" src="images/lee_cell_arrow1.png" style="position:absolute;top:0;left:0;" />
+                      <img class="fragment fade-in" data-fragment-index="1" width="446" height="325" src="images/lee_cell_arrow2.png" style="position:absolute;top:0;left:0;" />
+                    </div><br>
+                    <font size="-1"><b>Source:</b> J. H. S. Lee, The Detonation Phenomenon. Cambridge University Press, 2008.</font>
+                    <aside class="notes">
+                        <ul>
+                            <li> Cell width is measured from top to bottom, as shown </li>
+                            <b>advance</b>
+                            <li> All cells are measured, and mean cell size is reported </li>
+                        </ul>
+                    </aside>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
@@ -383,6 +385,14 @@
                         * Schlieren and soot foils have been utilized simultaneously, **but not for cell size measurement**
                         * Schlieren data have only been compared to historical soot foil cell sizes **not within the same experiment**
                     </script>
+                </section>
+                
+                <section>
+                    <h1>Measurement</h1>
+                    <hr>
+                    <b>Detonation Cell Size:</b> Schlieren Method<br>
+                    <img src="images/Radulescu_detonation_schlieren.png" height="325" /><br>
+                    <font size="-2"><b>Source:</b> M. I. Radulescu, G. J. Sharpe, C. K. Law, and J. H. S. Lee, “The hydrodynamic structure of unstable cellular detonations,” J. Fluid Mech., vol. 580, no. 2007, p. 31, 2007.</font>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
@@ -444,20 +454,20 @@
                     <script type="text/template">
                         # Proposal
                         ---
-                        **Studies**  
+                        **Publications**  
                         
                         * Cell size measurement <!-- .element: class="fragment" data-fragment-index="0" -->
                         * Dilution in methane-nitrous mixtures <!-- .element: class="fragment" data-fragment-index="1" -->
-                        * Dilution in propane mixtures <!-- .element: class="fragment" data-fragment-index="2" -->
+                        * Dilution in propane-nitrous mixtures <!-- .element: class="fragment" data-fragment-index="2" -->
                         * Software development <!-- .element: class="fragment" data-fragment-index="3" -->
                     </script>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
                     <script type="text/template">
-                        # Proposal
+                        # Publications
                         ---
-                        **Studies:** Cell Size Measurement
+                        **Cell Size Measurement**
                         <font size="6">
                         <ul>
                             <li>Soot foil vs. schlieren</li> <!-- .element: class="fragment" data-fragment-index="0" -->
@@ -491,9 +501,9 @@
                 
                 <section data-markdown data-separator-notes="^Note:">
                     <script type="text/template">
-                        # Proposal
+                        # Publications
                         ---
-                        **Studies:** Dilution in Methane-Nitrous Mixtures
+                        **Dilution in Methane-Nitrous Mixtures**
                         <font size="6">
                         <ul>
                             <li>CH$_4$-N$_2$O at $\Phi$ = 0.4, 0.7, 1.0</li> <!-- .element: class="fragment" data-fragment-index="0" -->
@@ -527,9 +537,9 @@
                 
                 <section data-markdown data-separator-notes="^Note:">
                     <script type="text/template">
-                        # Proposal
+                        # Publications
                         ---
-                        **Studies:** Dilution in Propane-Nitrous Mixtures
+                        **Dilution in Propane-Nitrous Mixtures**
                         <font size="6">
                         <ul>
                             <li>C$_3$H$_8$-N$_2$O at $\Phi$ = 0.4, 0.7, 1.0</li> <!-- .element: class="fragment" data-fragment-index="0" -->
@@ -563,9 +573,9 @@
                 
                 <section data-markdown data-separator-notes="^Note:">
                     <script type="text/template">
-                        # Proposal
+                        # Publications
                         ---
-                        **Studies:** Software Development
+                        **Software Development**
                         <font size="6">
                         <ul>
                             <li>DDT run-up calculation</li> <!-- .element: class="fragment" data-fragment-index="0" -->
