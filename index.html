@@ -371,7 +371,7 @@
                 
                 <section data-markdown data-separator-notes="^Note:">
                     <script type="text/template">
-                        # Background
+                        # Measurement
                         ---
                         **Cell Size Measurement:** Schlieren Method
                         * Non-intrusive <!-- .element: class="fragment" data-fragment-index="0" -->
@@ -399,12 +399,25 @@
                     <script type="text/template">
                         # Proposal
                         ---
+                        **Timeline**
+                        
+                        <img src="images/Timeline.png", width="800">
+                        
+                        Note:
+                        ADD NOTES
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Proposal
+                        ---
                         **Objectives**
                         
-                        1. Cell size measurement fidelity <!-- .element: class="fragment" data-fragment-index="0" -->
-                        2. CO$_2$ and NO effects <!-- .element: class="fragment" data-fragment-index="1" -->
-                        3. Chemical kinetic causes <!-- .element: class="fragment" data-fragment-index="2" -->
-                        4. Varying carbon number <!-- .element: class="fragment" data-fragment-index="3" -->
+                        1. Evaluate cell size measurement techniques <!-- .element: class="fragment" data-fragment-index="0" -->
+                        2. Measure CO$_2$ and NO dilution effects <!-- .element: class="fragment" data-fragment-index="1" -->
+                        3. Determine chemical kinetic causes of measured effects <!-- .element: class="fragment" data-fragment-index="2" -->
+                        4. Identify how chemical effects change with carbon number <!-- .element: class="fragment" data-fragment-index="3" -->
             
                         Note:
                         1. Evaluate the fidelity of using focusing schlieren measurements to measure cell sizes
@@ -420,21 +433,21 @@
                         ---
                         **Tasks**
                         <ol style="font-size:32px">
-                            <li> Compare measurement techniques <!-- .element: class="fragment" data-fragment-index="0" -->
+                            <li> Compare measurement techniques - CH$_4$ <!-- .element: class="fragment" data-fragment-index="0" -->
                             **(objective 1)** <!-- .element: class="fragment" data-fragment-index="0" -->
-                            <li> Undiluted detonations <!-- .element: class="fragment" data-fragment-index="1" -->
+                            <li> Undiluted detonations - CH$_4$ <!-- .element: class="fragment" data-fragment-index="1" -->
                             **(objective 2)** <!-- .element: class="fragment" data-fragment-index="1" -->
-                            <li> Inert diluted detonations <!-- .element: class="fragment" data-fragment-index="2" -->
+                            <li> Inert diluted detonations - CH$_4$ <!-- .element: class="fragment" data-fragment-index="2" -->
                             **(objective 2)** <!-- .element: class="fragment" data-fragment-index="2" -->
-                            <li> Product diluted detonations <!-- .element: class="fragment" data-fragment-index="3" -->
+                            <li> Product diluted detonations - CH$_4$ <!-- .element: class="fragment" data-fragment-index="3" -->
                             **(objective 2)** <!-- .element: class="fragment" data-fragment-index="3" -->
-                            <li> Simulate measured detonations <!-- .element: class="fragment" data-fragment-index="4" -->
+                            <li> Simulate measured detonations - CH$_4$ <!-- .element: class="fragment" data-fragment-index="4" -->
                             **(objective 3)** <!-- .element: class="fragment" data-fragment-index="4" -->
-                            <li> Sensitivity analysis <!-- .element: class="fragment" data-fragment-index="5" -->
+                            <li> Chemical sensitivity analysis - CH$_4$ <!-- .element: class="fragment" data-fragment-index="5" -->
                             **(objective 3)** <!-- .element: class="fragment" data-fragment-index="5" -->
-                            <li> Different fuel <!-- .element: class="fragment" data-fragment-index="6" -->
+                            <li> Repeat 2-6 with a different fuel - C$_3$H$_8$ <!-- .element: class="fragment" data-fragment-index="6" -->
                             **(objective 4)** <!-- .element: class="fragment" data-fragment-index="6" -->
-                            <li> Software package <!-- .element: class="fragment" data-fragment-index="7" -->
+                            <li> Develop software package <!-- .element: class="fragment" data-fragment-index="7" -->
                             **(objectives 1, 2, 3, and 4)** <!-- .element: class="fragment" data-fragment-index="7" -->
                         </ol>
                         
@@ -454,13 +467,250 @@
                     <script type="text/template">
                         # Proposal
                         ---
-                        **Publications**  
+                        **Anticipated Publications**  
                         
                         * Cell size measurement <!-- .element: class="fragment" data-fragment-index="0" -->
                         * Dilution in methane-nitrous mixtures <!-- .element: class="fragment" data-fragment-index="1" -->
                         * Dilution in propane-nitrous mixtures <!-- .element: class="fragment" data-fragment-index="2" -->
                         * Software development <!-- .element: class="fragment" data-fragment-index="3" -->
+                        
+                        Note:
+                        These will be discussed in detail after we talk about the experimental apparatus and methods
+                        
+                        Evaluating:
+                        * Soot foil and focusing schlieren methods for detonation cell measurement
+                        
+                        Studying the effects of dilution with:
+                        * 2 fuels: methane and propane
+                        * 1 inert diluent: Argon
+                        * 2 product diluents: CO2 and NO
+                        * 4 levels of dilution
+                        
+                        In order to perform these studies, I have designed and built a closed-end detonation tube
                     </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Tube Design
+                        ---
+                        **Overview**
+                        
+                        <img src="images/Tube_2_9_2018.png" width="1000">
+                        
+                        Note:
+                        * 20 ft long
+                        * 316L stainless steel
+                        * class 900 flanges
+                        * an actual ton
+                        * mixing with brushless DC fan along the length of the tube
+                        * viewing section for schlieren
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Tube Design
+                        ---
+                        **Software**  
+                        * DDT blockage sizing <!-- .element: class="fragment" data-fragment-index="0" -->
+                        * DDT runup length estimation <!-- .element: class="fragment" data-fragment-index="1" -->
+                        * Window thickness/FS calculation <!-- .element: class="fragment" data-fragment-index="2" -->
+                        * Window hardware FS (including pullout) <!-- .element: class="fragment" data-fragment-index="3" -->
+                        * Dynamic load factor calculation <!-- .element: class="fragment" data-fragment-index="4" -->
+                        * Maximum initial pressure calculation <!-- .element: class="fragment" data-fragment-index="5" -->
+                        * Flange sizing <!-- .element: class="fragment" data-fragment-index="6" -->
+                        
+                        Note:
+                        Currently:
+                        * Test matrix generation
+                        * Wave speed calculation from diode data
+                        * Error propagation  
+                        Future:
+                        * Cell size measurement
+                        * Chemical sensitivity analysis 
+                        **Show the type of analysis that can now be done in an afternoon...**
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Tube Design
+                        ---
+                        **Software**  
+                        <img src="images/schedule_study.png" height="400">
+                        
+                        Note:
+                        * Jump in methane is due to DLF caused by wave speed
+                        * Both have identical reflection pressures :)
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Tube Design
+                        ---
+                        **Software**  
+                        <img src="images/size_study.png" height="400">
+                        
+                        Note:
+                        * Differences are again due to DLF caused by wave speed
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Tube Design
+                        ---
+                        **Software**  
+                        <img src="images/equivalence_study.png" height="400">
+                        
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Tube Design
+                        ---
+                        **Software**  
+                        <img src="images/temperature_study.png" height="400">
+                        
+                        Note:
+                        This looks wrong, but isn't:
+                        * Reactant temperature increases therefore...
+                        * speed of sound increases and so...
+                        * CJ Mach number decreases...
+                        * causing reflected pressure to decrease  
+                        And so:
+                        * Tube max stress decreases but...
+                        * Reflected pressure decreases faster  
+                        
+                        **So I've got this software, which is neat, but now let's talk about the tube that I designed with it**
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Tube Design
+                        ---
+                        **Ignition/DDT**
+                        
+                        &nbsp;
+                        
+                        <img src="images/DDT.png" width="1000">
+                        
+                        Note:
+                        * ignition via automotive spark plug
+                        * AEM high-output smart coil
+                        * 3/4 inch spiraled blockage
+                        * 8 ft long
+                        * 45.3% BR (rule of thumb ~45% - Ciccarelli review article)
+                        * 1/2 all-thread with fender washers
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Tube Design
+                        ---
+                        **Viewing Section  **
+                        <img src="images/viewing_section.png" height="400">
+                        
+                        Note:
+                        * 5 3/4 x 2.5 inch viewing area
+                        * inch thick quartz
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Schlieren System**
+                        
+                        <img src="images/Schlieren.png" width="800">
+                        
+                        Note:
+                        * focusing vs. regular
+                        * beam folded due to spatial constraints
+                        * z-type to minimize optical errors
+                        * 10 inch mirrors
+                        * f/5 parabolic
+                        * tungsten halogen projector lamp
+                        * 590 nm filter
+                        * phantom veo 710
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Speed Measurement**  
+                        
+                        <img src="images/diodes.png" width="800">
+                        
+                        Note:
+                        * Diodes 6 inches apart (currently sampling at 12 to cut uncertainty)
+                        * 1/2 NPT ports with quartz pass-through and patch cables to diodes
+                        * 2 MS/s output limit on DAQ chassis -> only 2 diodes
+                    </script>
+                </section>
+                
+                <section>
+                    <h1>Methods</h1>
+                    <hr>
+                    <b>Speed Measurement</b><br>
+                    <div style="position:relative; width:1000px; height:400px; margin:0 auto; display:inline-block;">
+                      <img width="1000" height="400" src="images/raw_diode_signal.svg" style="position:absolute;top:0;left:0;" />
+                      <img class="fragment fade-in" data-fragment-index="0" width="1000" height="400" src="images/max_derivative.svg" style="position:absolute;top:0;left:0;" />
+                      <img class="fragment fade-in" data-fragment-index="1" width="1000" height="400" src="images/diode_dt.svg" style="position:absolute;top:0;left:0;" />
+                    </div>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Speed Measurement: Preliminary Data**
+                        
+                        
+                        <img src="images/diode_data.svg" width="800" />
+                        
+                        Note:
+                        * **Mean velocity** 93.7 +/- 0.40 percent CJ
+                        * **Mean uncertainty** +/- 8.56 m/s (0.42%)
+                        * Low day-to-day variability
+                            * P value 0.085
+                            * t-score 1.78
+                            * Fail to reject null at 5% signifigance level
+                            * means are the same!
+                    </script>
+                </section>
+                
+                <section data-markdown data-separator-notes="^Note:">
+                    <script type="text/template">
+                        # Methods
+                        ---
+                        **Isolating Dilution Effects**
+                        
+                        * <!-- .element: class="fragment" data-fragment-index="0" --><font class="fragment" data-fragment-index="0">Thermal:</font><font color="#666666" class="fragment" data-fragment-index="1"> specific heat matching</font>
+                        * <!-- .element: class="fragment" data-fragment-index="2" --><font class="fragment" data-fragment-index="2">Sound speed:</font><font color="#666666" class="fragment" data-fragment-index="3"> calculation (Cantera)</font>
+                        * <!-- .element: class="fragment" data-fragment-index="4" --><font class="fragment" data-fragment-index="4">Chemical kinetic:</font><font color="#666666" class="fragment" data-fragment-index="5"> reaction rate sensitivity analysis</font>
+                    </script>
+                </section>
+                
+                <section>
+                    <h1>Methods</h1>
+                    <hr>
+                    <b>Chemical Sensitivity Analysis</b><p />
+                    <img src="images/sensitivity_equations.svg" height="200" style="vertical-align:middle;" class="fragment" data-fragment-index="0" /> 
+                    &nbsp &nbsp 
+                    <img src="images/fuller_sensitivity.png" height="325" style="vertical-align:middle;" class="fragment" data-fragment-index="1" /><br>
+                    <font size="-1" class="fragment" data-fragment-index="1"><b>Source:</b> C. Fuller et al., “Effects of vitiation and pressure on laminar flame speeds of n-decane,” 50th AIAA Aerospace Sciences Meeting, January, 2012.</font>
+                    <aside class="notes">
+                        ADD NOTES
+                    </aside>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
@@ -605,129 +855,6 @@
                             </tr>
                         </table> <!-- .element: class="fragment" data-fragment-index="5" -->
                     </script>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Proposal
-                        ---
-                        **Timeline**
-                        
-                        <img src="images/Timeline.png", width="800">
-                        
-                        Note:
-                        ADD NOTES
-                    </script>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Methods
-                        ---
-                        **Detonation Tube:** Overview
-                        
-                        <img src="images/Tube_2_9_2018.png" width="1000">
-                        
-                        Note:
-                        ADD NOTES
-                    </script>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Methods
-                        ---
-                        **Detonation Tube:** Ignition/DDT
-                        
-                        &nbsp;
-                        
-                        <img src="images/DDT.png" width="1000">
-                        
-                        Note:
-                        ADD NOTES
-                    </script>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Methods
-                        ---
-                        **Detonation Tube:** Viewing Section  
-                        <img src="images/viewing_section.png" height="400">
-                        
-                        Note:
-                        ADD NOTES
-                    </script>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Methods
-                        ---
-                        **Detonation Tube:** Schlieren
-                        
-                        <img src="images/Schlieren.png" width="800">
-                        
-                        Note:
-                        ADD NOTES
-                    </script>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Methods
-                        ---
-                        **Detonation Tube:** Speed Measurement  
-                        
-                        <img src="images/diodes.png" width="800">
-                        
-                        Note:
-                        ADD NOTES
-                    </script>
-                </section>
-                
-                <section>
-                    <h1>Methods</h1>
-                    <hr>
-                    <b>Detonation Tube:</b> Speed Measurement<br>
-                    <div style="position:relative; width:1000px; height:400px; margin:0 auto; display:inline-block;">
-                      <img width="1000" height="400" src="images/raw_diode_signal.svg" style="position:absolute;top:0;left:0;" />
-                      <img class="fragment fade-in" data-fragment-index="0" width="1000" height="400" src="images/max_derivative.svg" style="position:absolute;top:0;left:0;" />
-                      <img class="fragment fade-in" data-fragment-index="1" width="1000" height="400" src="images/diode_dt.svg" style="position:absolute;top:0;left:0;" />
-                    </div>
-                </section>
-                
-                <section data-markdown data-separator-notes="^Note:">
-                    <script type="text/template">
-                        # Methods
-                        ---
-                        **Detonation Tube:** Speed Measurement
-                        
-                        
-                        <img src="images/diode_data.svg" width="800" />
-                        
-                        Note:
-                        * **Mean velocity** 93.7 +/- 0.40 percent CJ
-                        * **Mean uncertainty** +/- 8.56 m/s (0.42%)
-                        * Low day-to-day variability
-                            * P value 0.085
-                            * t-score 1.78
-                            * Fail to reject null at 5% signifigance level
-                            * means are the same!
-                    </script>
-                </section>
-                
-                <section>
-                    <h1>Methods</h1>
-                    <hr>
-                    <b>Detonation Tube:</b> Chemical Sensitivity Analysis<p />
-                    <img src="images/sensitivity_equations.svg" height="200" style="vertical-align:middle;" class="fragment" data-fragment-index="0" /> 
-                    &nbsp &nbsp 
-                    <img src="images/fuller_sensitivity.png" height="325" style="vertical-align:middle;" class="fragment" data-fragment-index="1" /><br>
-                    <font size="-1" class="fragment" data-fragment-index="1"><b>Source:</b> C. Fuller et al., “Effects of vitiation and pressure on laminar flame speeds of n-decane,” 50th AIAA Aerospace Sciences Meeting, January, 2012.</font>
-                    <aside class="notes">
-                        ADD NOTES
-                    </aside>
                 </section>
                 
                 <section data-markdown data-separator-notes="^Note:">
